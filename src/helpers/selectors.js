@@ -39,6 +39,8 @@
     }
   }
 };*/
+
+//appointments = dayfound.appointments.map(appointmentId => state.appointments[apointmentId]
  export function getAppointmentsForDay(state, day) {
 
   if (state.days.length !== 0) {
@@ -65,3 +67,4 @@
   return null;
 };
 
+//interviewerlist = object.values(interviewers)
