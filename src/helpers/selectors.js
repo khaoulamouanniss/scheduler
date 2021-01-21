@@ -25,30 +25,43 @@
       time: "4pm",
       interview: { student: "Chad Takahashi", interviewer: 2 }
     }
+  },
+  interviewers: {
+    "1": {  
+      "id": 1,
+      "name": "Sylvia Palmer",
+      "avatar": "https://i.imgur.com/LpaY82x.png"
+    },
+    "2": {
+      id: 2,
+      name: "Tori Malcolm",
+      avatar: "https://i.imgur.com/Nmx0Qxo.png"
+    }
   }
-};
-*/
-  export function getAppointmentsForDay(state, day) {
-  /*
-  state.days.name === name return state.days.appointments array or empty array if there is no appointment for that day
-  state.days.appointments[i].id === state.appointments.id
-  return array of appointments objects (state.appointments)*/
+};*/
+ export function getAppointmentsForDay(state, day) {
+
   if (state.days.length !== 0) {
    
     const filteredDay = state.days.filter(dayI => dayI.name === day);
 
     if(filteredDay.length !== 0){
 
-      let filteredApointments = []
-      for (let appointment of filteredDay[0].appointments){
-        for (let a in state.appointments){
-          if (appointment === state.appointments[a].id) {
-            filteredApointments.push(state.appointments[a]);
-          }
-        }
-      }
+      const filteredApointments = Object.values(state.appointments).filter(appointment => filteredDay[0].appointments.indexOf(appointment.id) > -1);
+
       return filteredApointments;
     }
   }
   return [];
-}
+};
+
+
+ export function getInterview(state, interview) {
+
+  if(interview){  
+    const interviewer = Object.values(state.interviewers).filter(interviewer => interviewer.id === interview.interviewer);
+    return{student :interview.student, interviewer:interviewer[0]};
+  }    
+  return null;
+};
+
