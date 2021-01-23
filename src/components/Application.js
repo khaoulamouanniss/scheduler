@@ -55,7 +55,9 @@ export default function Application(props) {
       ...state,
       appointments
     });
-  console.log(id,interview)
+    console.log(id,interview);
+    return axios.delete(`http://localhost:8001/api/appointments/${id}`).then(() => setState({...state,appointments}))
+  
    }
     
    
