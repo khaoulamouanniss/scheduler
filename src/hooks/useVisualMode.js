@@ -8,13 +8,13 @@ export default function useVisualMode(initial) {
 
   const transition = (newMode, replace = false) => {
     if (replace){
-      let newHistory = history.slice(0,- 1);
-      setHistory([...newHistory,newMode]);
-      setMode(newMode);
-    } else {
+      //let newHistory = history.slice(0,- 1);
+      setHistory(prev => [...prev].slice(0,-1));
+     
+    } 
       setHistory(prev => [ ...prev,newMode]);
       setMode(newMode);
-    }
+    
     }
     
   const back = () => {
