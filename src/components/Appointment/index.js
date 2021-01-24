@@ -40,7 +40,7 @@ export default function Appointment (props) {
 
   function deleteApp() {
     transition(DELETING,true);
-    console.log(props.interview.interviewer)
+    
     props
      .cancelInterview(props.id)
      .then(() => transition(EMPTY))
