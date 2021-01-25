@@ -17,10 +17,10 @@ export default function useApplicationData() {
 const updateDays = (id, add) => {
     const days = state.days.map(day => {
       const newDay  = {...day};
-      console.log('I am spots before', newDay.spots)
+     
       if (newDay.appointments.includes(id)) {
         add ? newDay.spots++ : newDay.spots--;
-        console.log('I am spots after', newDay.spots)
+       
 
       }
       return newDay;
@@ -32,7 +32,6 @@ const updateDays = (id, add) => {
 function bookInterview(id, interview) {
 
   const appointment = {
-   
     ...state.appointments[id],
     interview: { ...interview }
   };
@@ -54,7 +53,7 @@ function bookInterview(id, interview) {
     [id]: nullAppointment
   };
   
-  return axios.delete(`/api/appointments/${id}`).then(() => setState({...state,appointments, days:updateDays(id, true)}))
+  return axios.delete(`/api/appointments/${id}`).then(() => setState({...state,appointments, days:updateDays(id, true)}));
 
  }
 
