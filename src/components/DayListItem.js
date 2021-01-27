@@ -1,4 +1,5 @@
 import React from "react";
+
 import classnames from "classnames";
 
 import "components/DayListItem.scss";
@@ -11,13 +12,15 @@ export default function DayListItem(props) {
   });
 
   const formatSpots = function(spots) {
-    //if(spots === 0? `no spots remaining` : spots + ' spots remaining';
+
     if(spots === 0){
       return `no spots remaining`
     }
+
     else if(spots === 1) {
       return `1 spot remaining`;
     }
+
     else {
       return spots + ' spots remaining';
     }
@@ -29,6 +32,6 @@ export default function DayListItem(props) {
       <h3 className= "text--light">{formatSpots(props.spots)}</h3>
     </li>
   );
-}
+};
 
 
