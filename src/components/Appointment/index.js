@@ -28,6 +28,7 @@ export default function Appointment (props) {
     props.interview ? SHOW : EMPTY
   );
   
+  // Function to sqave or edit an appointment and show it
   function save(name, interviewer) {
     
     let edit = (mode === EDIT);
@@ -45,8 +46,9 @@ export default function Appointment (props) {
     .catch(error => transition(ERROR_SAVE, true));
   }; 
 
+  // Function to delete an appointment and show the empty mode
   function deleteApp() {
-    
+
     transition(DELETING,true);
     
     props

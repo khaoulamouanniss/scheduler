@@ -14,6 +14,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState(prev => ({ ...prev, day }));
 
+  // Function to update the days with the right number of spots remaining
   const updateDays = (id, add) => {
 
     const days = state.days.map(day => {
@@ -28,6 +29,7 @@ export default function useApplicationData() {
     return days;
   };
 
+  // Function to book a new interview or update an existing one
   function bookInterview(id, interview, edit ) {
 
     const appointment = {
@@ -44,6 +46,7 @@ export default function useApplicationData() {
     )
   };
 
+  // Function to cancel an interview
   function cancelInterview (id) {
 
     const nullAppointment = {
