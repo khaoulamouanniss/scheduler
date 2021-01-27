@@ -4,6 +4,16 @@ React based project to create meetings for students to connect with mentors in r
 
 Tech Stack: React, Classnames, Storybook, Babel, WebSockets, Axios, Webpack Dev Server, Jest, Testing Library, Cypress, prop-types.
 
+# Final Product
+
+!["Showing the appointments for Thursday"](https://github.com/khaoulamouanniss/scheduler/blob/master/docs/appointment-show.jpg?raw=true)
+
+
+!["Creating a new appointment"](https://github.com/khaoulamouanniss/scheduler/blob/master/docs/appointment-form.jpg?raw=true)  
+  
+  
+!["Deleting an appointment"](https://github.com/khaoulamouanniss/scheduler/blob/master/docs/appointment-statut-deleting.jpg?raw=true)  
+
 ## Setup
 
 Install dependencies with `npm install`.
