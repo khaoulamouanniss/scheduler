@@ -20,8 +20,6 @@ const updateDays = (id, add) => {
      
       if (newDay.appointments.includes(id)) {
         add ? newDay.spots++ : newDay.spots--;
-       
-
       }
       return newDay;
     })
@@ -29,7 +27,7 @@ const updateDays = (id, add) => {
   return days;
 }
 
-function bookInterview(id, interview) {
+function bookInterview(id, interview, edit ) {
 
   const appointment = {
     ...state.appointments[id],
@@ -40,7 +38,7 @@ function bookInterview(id, interview) {
     [id]: appointment
   };
   
-  return axios.put(`/api/appointments/${id}`,{'interview':interview}).then(() => setState({...state,appointments, days:updateDays(id, false)})
+  return axios.put(`/api/appointments/${id}`,{'interview':interview}).then(() => edit ? setState({...state,appointments}) : setState({...state,appointments, days:updateDays(id, false)}) 
   )
 }
  function cancelInterview (id) {
